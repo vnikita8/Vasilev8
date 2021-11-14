@@ -8,14 +8,3 @@ C:\Users\EHOT\source\repos\Vasilev8\bin\Debug\Vasilev8.exe
 C:\Users\EHOT\source\repos\Vasilev8\bin\Debug\Vasilev8.pdb
 C:\Users\EHOT\source\repos\Vasilev8\obj\Debug\Vasilev8.exe
 C:\Users\EHOT\source\repos\Vasilev8\obj\Debug\Vasilev8.pdb
-C:\Users\User\Documents\GitHub\Vasilev8\bin\Debug\Vasilev8.exe.config
-C:\Users\User\Documents\GitHub\Vasilev8\bin\Debug\Vasilev8.exe
-C:\Users\User\Documents\GitHub\Vasilev8\bin\Debug\Vasilev8.pdb
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.csproj.AssemblyReference.cache
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.csproj.SuggestedBindingRedirects.cache
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.Form1.resources
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.Properties.Resources.resources
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.csproj.GenerateResource.cache
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.exe
-C:\Users\User\Documents\GitHub\Vasilev8\obj\Debug\Vasilev8.pdb
