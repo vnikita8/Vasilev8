@@ -26,6 +26,9 @@ namespace Vasilev8
         TemperatureDict temperatureDict;
         Matrix matrix1;
         Matrix matrix2;
+        MatrixLinkedList matrix5_1;
+        MatrixLinkedList matrix5_2;
+
         public Form1()
         {
             InitializeComponent();
@@ -179,6 +182,17 @@ namespace Vasilev8
         private void dataMatrixRes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            matrix5_1 = new MatrixLinkedList((int)FiveRow1.Value, (int)FiveColumns1.Value);
+            matrix5_2 = new MatrixLinkedList((int)FiveRow2.Value, (int)FiveColumns2.Value);
+            matrix5_1.RandomGenerate((int)FiveMax.Value);
+            matrix5_2.RandomGenerate((int)FiveMax.Value);
+
+            matrix5_1.MatrixGui(FiveMatrix1);
+            matrix5_2.MatrixGui(FiveMatrix2);
         }
     }
 
@@ -393,12 +407,48 @@ namespace Vasilev8
 
     public class MatrixLinkedList
     {
-        public LinkedList<LinkedList<int>> matrix;
+        public LinkedList<LinkedList<int>> matrix = new LinkedList<LinkedList<int>>();
+        public int RowsCount;
+        public int ColsCount;
 
-        public MatrixLinkedList(int rows, int columns)
+        public MatrixLinkedList(int rows, int columns) {RowsCount = rows; ColsCount = columns;}
+
+        public void RandomGenerate(int MaxValue)
         {
-
+            Random rnd = new Random();
+            for (int row = 0; row < RowsCount; row++)
+            {
+                LinkedList<int> row_matrix = new LinkedList<int>();
+                for (int cols = 0; (cols < ColsCount); cols++)
+                {
+                    row_matrix.AddLast(rnd.Next(0, MaxValue+1));
+                }
+                matrix.AddLast(row_matrix);
+            }
         }
+
+        public void MatrixGui(DataGridView table)
+        {
+            table.Rows.Clear();
+            table.Columns.Clear();
+            for (int col = 0; col < ColsCount; col++)
+                table.Columns.Add("", "");
+            int currentRow = 0;
+            int currentColumn;
+            foreach (LinkedList<int> row in matrix)
+            {
+                currentColumn = 0;
+                table.Rows.Add();
+                foreach(int cell in row)
+                {
+                    table[currentRow, currentColumn].Value = cell;
+                    currentColumn++;    
+                }
+                //currentRow++;
+            }
+        }
+
+
     }
 
     public class Temperature //Ex3 
