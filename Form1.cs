@@ -97,13 +97,12 @@ namespace Vasilev8
             SixThree.Text = "";
             SixTwo.Text = "";
             Rich();
-            BeginInvoke(new Action(() =>
-            {
+            
                 foreach (KeyValuePair<string, double> keyValuePair in temperatureDict.middleTemperature)
                 {
                     SixTwo.Text += $"{keyValuePair.Key}:  {keyValuePair.Value}\n";
                 }
-            }));
+            
 
             
             foreach (KeyValuePair<string, double> keyValuePair in temperatureDict.middleTemperatureSort)
@@ -122,13 +121,17 @@ namespace Vasilev8
         {
             foreach (KeyValuePair<string, int[]> keyValuePair in temperatureDict.temperature)
             {
-                SixOne.Text += $"\t{keyValuePair.Key}\n";
-                int dayCount = 1;
-                foreach (int days in keyValuePair.Value)
+                Invoke((MethodInvoker)delegate
                 {
-                    SixOne.Text += $"{dayCount}:  {days}\n";
-                    dayCount++;
-                }
+                    SixOne.Text += $"\t{keyValuePair.Key}\n";
+                    int dayCount = 1;
+                    foreach (int days in keyValuePair.Value)
+                    {
+                        SixOne.Text += $"{dayCount}:  {days}\n";
+                        dayCount++;
+                    }
+                });
+                
             }
         }
 
